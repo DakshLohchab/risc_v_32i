@@ -1,0 +1,14 @@
+0.7
+2020.2
+Nov 14 2025
+12:36:23
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.sim/sim_1/behav/xsim/glbl.v,1756381829,verilog,,,,glbl,,uvm,,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sim_1/new/pc_tb.sv,1783604701,systemVerilog,,,,pc_tb,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sim_1/new/tb_if_id.sv,1783679877,systemVerilog,,,,tb_if_id,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sim_1/new/tb_instruction_memory.sv,1783607615,systemVerilog,,,,tb_instruction_memory,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/adder.sv,1783605089,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/if_id.sv,,adder,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/if_id.sv,1783679563,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/if_stage.sv,,if_id,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/if_stage.sv,1783682116,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/instruction_memory.sv,,if_stage,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/instruction_memory.sv,1783607450,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/pc.sv,,instruction_memory,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/pc.sv,1783603991,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/tb_if_stage.sv,,pc,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/tb_if_stage.sv,1783682665,systemVerilog,,,,tb_if_stage,,uvm,../../../../../../../Xilinx/2025.2/data/rsb/busdef,,,,,

@@ -1,0 +1,14 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  --include "../../../../../../../Xilinx/2025.2/data/rsb/busdef" \
+"../../../../rv32i_pipeline_cpu.srcs/sources_1/new/adder.sv" \
+"../../../../rv32i_pipeline_cpu.srcs/sources_1/new/if_id.sv" \
+"../../../../rv32i_pipeline_cpu.srcs/sources_1/new/if_stage.sv" \
+"../../../../rv32i_pipeline_cpu.srcs/sources_1/new/instruction_memory.sv" \
+"../../../../rv32i_pipeline_cpu.srcs/sources_1/new/pc.sv" \
+"../../../../rv32i_pipeline_cpu.srcs/sources_1/new/tb_if_stage.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

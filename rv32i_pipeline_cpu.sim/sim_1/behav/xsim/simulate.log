@@ -1,0 +1,11 @@
+Time resolution is 1 ps
+T=0 PC=00000000 Instr=00000013
+T=15000 PC=00000000 Instr=00500093
+T=25000 PC=00000004 Instr=00a00113
+T=35000 PC=00000008 Instr=002081b3
+T=45000 PC=0000000c Instr=00302023
+T=55000 PC=00000010 Instr=00000013
+T=65000 PC=00000014 Instr=00000013
+T=75000 PC=00000018 Instr=00000013
+$finish called at time : 85 ns : File "/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/tb_if_stage.sv" Line 56
+INFO: xsimkernel Simulation Memory Usage: 499336 KB (Peak: 556608 KB), Simulation CPU Usage: 1930 ms
