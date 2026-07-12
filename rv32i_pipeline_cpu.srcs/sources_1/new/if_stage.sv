@@ -24,7 +24,10 @@ module if_stage(
     logic [31:0] pcNext;
     logic [31:0] pcPlus4F;
     logic [31:0] instrF;
-    assign pcNext = (pcSrc) ? pcTarget : pcPlus4F;
+    // A load-use stall holds both the IF/ID register and the PC.  Keeping the
+    // PC stable is essential; otherwise the instruction after the dependent
+    // instruction would be lost while IF/ID is held.
+    assign pcNext = pcSrc ? pcTarget : (stallD ? pcF : pcPlus4F);
     pc PC(
 
     .clk(clk),

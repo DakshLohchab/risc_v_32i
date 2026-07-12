@@ -1,0 +1,1 @@
+-top "tb_rv32i_pipeline" -snapshot "tb_rv32i_pipeline_compile" 

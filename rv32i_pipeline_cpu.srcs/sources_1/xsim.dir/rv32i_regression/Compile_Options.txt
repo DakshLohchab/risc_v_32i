@@ -1,0 +1,1 @@
+-debug "typical" -top "tb_rv32i_pipeline_cpu" -snapshot "rv32i_regression" 

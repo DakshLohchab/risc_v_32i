@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# xsim v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sun Jul 12 06:34:03 2026
+# Process ID         : 233
+# Current directory  : /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1
+# Command line       : xsim -mode tcl -source {xsim.dir/rv32i_regression/xsim_script.tcl}
+# Log file           : /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/xsim.log
+# Journal file       : /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/xsim.jou
+# Running On         : localhost.localdomain
+# Platform           : rhel
+# Operating System   : Red Hat Enterprise Linux 10.2 (Coughlan)"
+RELEASE_TYPE=stable
+# Processor Detail   : AMD Athlon Silver 3050U with Radeon Graphics
+# CPU Frequency      : 2333.865 MHz
+# CPU Physical cores : 2
+# CPU Logical cores  : 2
+# Host memory        : 5819 MB
+# Swap memory        : 6224 MB
+# Total Virtual      : 12043 MB
+# Available Virtual  : 5962 MB
+#-----------------------------------------------------------
+source xsim.dir/rv32i_regression/xsim_script.tcl
+# xsim {rv32i_regression} -autoloadwcfg -runall
+ERROR: unexpected exception when evaluating tcl command
+    while executing
+"xsim {rv32i_regression} -autoloadwcfg -runall"
+    (file "xsim.dir/rv32i_regression/xsim_script.tcl" line 1)
+INFO: [Common 17-206] Exiting xsim at Sun Jul 12 06:34:12 2026...

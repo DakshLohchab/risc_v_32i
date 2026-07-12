@@ -1,8 +1,17 @@
-00500093
-00A00113
-002081B3
-00302023
-00000013
-00000013
-00000013
-00000013
+00500093 // 0x00: addi x1, x0, 5     (x1 = 5)
+00a00113 // 0x04: addi x2, x0, 10    (x2 = 10)
+002081b3 // 0x08: add  x3, x1, x2    (x3 = 15) -> Tests EX-to-EX Data Forwarding
+00302223 // 0x0C: sw   x3, 4(x0)     (Mem[4] = 15)
+00402203 // 0x10: lw   x4, 4(x0)     (x4 = 15) 
+001202b3 // 0x14: add  x5, x4, x1    (x5 = 15+5 = 20) -> Tests Load-Use Stall! (Waits for LW to finish)
+00228663 // 0x18: beq  x5, x2, fail  (20 == 10? False -> Branch Not Taken)
+00329663 // 0x1C: bne  x5, x3, pass  (20 != 15? True -> Branch Taken -> Jumps to 0x28)
+00100313 // 0x20: fail: addi x6, x0, 1 (This should be skipped/flushed)
+0080006f // 0x24: jal  x0, end       (Jump to end)
+06300313 // 0x28: pass: addi x6, x0, 99 (x6 = 99. Proves Branch flushed correctly)
+00602423 // 0x2C: end: sw x6, 8(x0)  (Mem[8] = 99)
+00000013 // 0x30: nop (Flushing the pipeline...)
+00000013 // 0x34: nop
+00000013 // 0x38: nop
+00000013 // 0x3C: nop
+00000013 // 0x40: nop
