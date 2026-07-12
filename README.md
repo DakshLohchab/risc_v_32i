@@ -244,26 +244,6 @@ General workflow:
 5. Observe waveform outputs.
 6. Verify register and memory contents.
 
----
-
-# Future Improvements
-
-Planned enhancements include:
-
-* Forwarding Unit
-* Hazard Detection Unit
-* Pipeline Stall Logic
-* Branch Prediction
-* Instruction Cache
-* Data Cache
-* CSR Instructions
-* Exception Handling
-* Interrupt Support
-* RV32M Extension
-* AXI4 Memory Interface
-* FPGA Demonstration
-
----
 
 # Applications
 
