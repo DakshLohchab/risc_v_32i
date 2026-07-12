@@ -54,54 +54,11 @@ The design emphasizes modularity, readability, and scalability so that additiona
 
 ## Pipeline Architecture
 
-```mermaid
-flowchart LR
+<p align="center">
+  <img src="architecture.png" alt="RV32I Pipeline Architecture" width="100%">
+</p>
 
-PC[Program Counter]
-
-IM[Instruction Memory]
-
-IFID[IF / ID]
-
-ID[Instruction Decode]
-
-RF[Register File]
-
-IMM[Immediate Generator]
-
-CTRL[Control Unit]
-
-IDEX[ID / EX]
-
-EX[Execute Stage]
-
-ALU[ALU]
-
-EXMEM[EX / MEM]
-
-DMEM[Data Memory]
-
-MEMWB[MEM / WB]
-
-WB[Write Back]
-
-PC --> IM
-IM --> IFID
-IFID --> ID
-ID --> RF
-ID --> IMM
-ID --> CTRL
-RF --> IDEX
-IMM --> IDEX
-CTRL --> IDEX
-IDEX --> EX
-EX --> ALU
-ALU --> EXMEM
-EXMEM --> DMEM
-DMEM --> MEMWB
-MEMWB --> WB
-WB --> RF
-```
+The processor follows a classic **5-stage pipelined architecture** consisting of the Instruction Fetch (IF), Instruction Decode (ID), Execute (EX), Memory Access (MEM), and Write Back (WB) stages. Each stage is separated by dedicated pipeline registers, allowing multiple instructions to execute concurrently and improving overall throughput.
 
 ---
 
