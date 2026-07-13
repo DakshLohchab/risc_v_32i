@@ -1,15 +1,59 @@
-123450b7 // 0x00: lui   x1, 0x12345    (x1 = 0x12345000) -> Tests U-Type Immediate
-00001117 // 0x04: auipc x2, 0x1        (x2 = PC + 0x1000 = 0x1004) -> Tests AUIPC 
-fff00193 // 0x08: addi  x3, x0, -1     (x3 = 0xFFFFFFFF) -> Loads a negative number
-00419213 // 0x0C: slli  x4, x3, 4      (x4 = 0xFFFFFFF0) -> Tests Logical Left Shift
-40225293 // 0x10: srai  x5, x4, 2      (x5 = 0xFFFFFFFC) -> Tests Arithmetic Right Shift (Preserves negative sign)
-0002a333 // 0x14: slt   x6, x5, x0     (Is -4 < 0? True -> x6 = 1) -> Tests Less Than logic
-024003e7 // 0x18: jalr  x7, x0, 0x24   (Jump to address 0x24, x7 = Return PC 0x1C) -> Tests JALR
-00100413 // 0x1C: addi  x8, x0, 1      (Skipped!)
-00200413 // 0x20: addi  x8, x0, 2      (Skipped!)
-00602623 // 0x24: sw    x6, 12(x0)     (Mem[12] = 1)
-00702823 // 0x28: sw    x7, 16(x0)     (Mem[16] = 0x1C)
-00000013 // 0x2C: nop
-00000013 // 0x30: nop
-00000013 // 0x34: nop
-00000013 // 0x38: nop
+// =========================================================================
+// UNIFIED RV32I PIPELINE TEST SUITE
+// =========================================================================
+
+// --- SUITE 1: Data Processing (Registers x1 - x8) ---
+// 0x00: addi x1, x0, 10      (x1 = 10)
+// 0x04: addi x2, x0, -5      (x2 = -5)
+// 0x08: add  x3, x1, x2      (x3 = 10 - 5 = 5)
+// 0x0C: sub  x4, x1, x2      (x4 = 10 - (-5) = 15)
+// 0x10: slt  x5, x2, x1      (x5 = (-5 < 10) ? 1 : 0 = 1)
+// 0x14: and  x6, x1, x3      (x6 = 10 & 5 = 0)
+// 0x18: xor  x7, x1, x4      (x7 = 10 ^ 15 = 5)
+// 0x1C: slli x8, x1, 2       (x8 = 10 << 2 = 40)
+00a00093
+ffb00113
+002081b3
+40208233
+001122b3
+0030f333
+0040c3b3
+00209413
+
+// --- SUITE 2: Control Flow & Flushes (Registers x9 - x15) ---
+// 0x20: addi x9, x0, 5       (x9 = 5)
+// 0x24: addi x10, x0, 5      (x10 = 5)
+// 0x28: beq  x9, x10, +8     (Branch Taken -> bypass next instruction)
+// 0x2C: addi x11, x0, 99     (SHOULD BE FLUSHED: x11 = 0)
+// 0x30: addi x12, x0, 10     (x12 = 10, Target of BEQ)
+// 0x34: jal  x13, +8         (Jump to 0x3C, x13 = PC+4 = 0x38)
+// 0x38: addi x14, x0, 99     (SHOULD BE FLUSHED: x14 = 0)
+// 0x3C: addi x15, x0, 20     (x15 = 20, Target of JAL)
+00500493
+00500513
+00a48463
+06300593
+00a00613
+008006ef
+06300713
+01400793
+
+// --- SUITE 3: Memory & Hazards (Registers x16 - x19) ---
+// 0x40: addi x16, x0, 48     (x16 = 48 -> Base address inside 64-byte RAM)
+// 0x44: addi x17, x0, 42     (x17 = 42 -> Data payload)
+// 0x48: sw   x17, 0(x16)     (Mem[48] = 42)
+// 0x4C: lw   x18, 0(x16)     (x18 = 42, triggers memory access)
+// 0x50: add  x19, x18, x0    (x19 = 42 + 0, forces LOAD-USE STALL)
+03000813
+02a00893
+01182023
+00082903
+000909b3
+
+// --- NOP Padding to flush final writebacks out of the pipeline ---
+// 0x54 to 0x64
+00000013
+00000013
+00000013
+00000013
+00000013

@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Mon Jul 13 05:46:14 2026
-# Process ID         : 17111
+# Start of session at: Mon Jul 13 06:57:17 2026
+# Process ID         : 24254
 # Current directory  : /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu
 # Command line       : xsim -nolog -mode tcl -source {xsim.dir/tb_rv32i_pipeline_behav/xsim_script.tcl}
 # Log file           : 
@@ -14,13 +14,13 @@
 # Operating System   : Red Hat Enterprise Linux 10.2 (Coughlan)"
 RELEASE_TYPE=stable
 # Processor Detail   : AMD Athlon Silver 3050U with Radeon Graphics
-# CPU Frequency      : 2365.723 MHz
+# CPU Frequency      : 2272.581 MHz
 # CPU Physical cores : 2
 # CPU Logical cores  : 2
 # Host memory        : 5819 MB
 # Swap memory        : 6224 MB
 # Total Virtual      : 12043 MB
-# Available Virtual  : 6364 MB
+# Available Virtual  : 6233 MB
 #-----------------------------------------------------------
 source xsim.dir/tb_rv32i_pipeline_behav/xsim_script.tcl
 run -all

@@ -1,8 +1,15 @@
 Time resolution is 1 ps
-[DBG] SLT EX: rs1=5 rs2=0 alu=1 rd=6
-[DBG] JALR EX: rs1=0 rd=7 pcPlus4=1c pcTarget=24
-x1=12345000 x2=1004 x4=fffffff0 x5=fffffffc x6=1 x7=1c x8=0
+
 ===============================================================
-PASS: Architecture successfully handled LUI, AUIPC, Shifts, and JALR!
+                 UNIFIED PIPELINE VERIFICATION                 
 ===============================================================
-$stop called at time : 615 ns : File "/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sim_1/new/tb_rv32i_pipeline.sv" Line 74
+
+[PASS] Suite 1: Data Processing & ALU Forwarding
+[PASS] Suite 2: Control Flow (Branches, Jumps & Flushes)
+[PASS] Suite 3: Memory & Load-Use Hazard Stalls
+
+===============================================================
+ ALL TESTS PASSED! RTL verified across full instruction set.
+===============================================================
+
+$stop called at time : 515 ns : File "/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sim_1/new/tb_rv32i_pipeline.sv" Line 68

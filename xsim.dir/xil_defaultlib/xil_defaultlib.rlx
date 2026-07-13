@@ -5,7 +5,7 @@ Nov 14 2025
 /home/dlohchab/Xilinx/2025.2/data/verilog/src/glbl.v,1756381829,systemVerilog,,,,glbl,,,,,,,,
 /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sim_1/new/tb_rv32i_pipeline.sv,1783901192,systemVerilog,,,,tb_rv32i_pipeline,,,,,,,,
 /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/adder.sv,1783605089,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/alu.sv,,adder,,,,,,,,
-/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/alu.sv,1783877548,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/alu_control.sv,,alu,,,,,,,,
+/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/alu.sv,1783902286,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/alu_control.sv,,alu,,,,,,,,
 /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/alu_control.sv,1783818906,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/control_unit.sv,,alu_control,,,,,,,,
 /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/control_unit.sv,1783877252,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/data_memory.sv,,control_unit,,,,,,,,
 /home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/data_memory.sv,1783818690,systemVerilog,,/home/dlohchab/projects/Verilog/rv32i_pipeline_cpu/rv32i_pipeline_cpu.srcs/sources_1/new/ex_mem.sv,,data_memory,,,,,,,,
