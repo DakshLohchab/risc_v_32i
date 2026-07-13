@@ -15,7 +15,7 @@ module ex_stage (
     localparam OP_LUI   = 7'b0110111;
     localparam OP_AUIPC = 7'b0010111;
     localparam OP_JALR  = 7'b1100111;
-    logic [31:0] srcA, srcB, aluA, aluB;
+    logic [31:0] srcA, srcB, aluA, aluB, alu_result_raw;
     logic [3:0] alu_ctrl;
     logic branch_taken;
 
@@ -37,7 +37,12 @@ module ex_stage (
     end
 
     alu_control u_alu_control(.alu_op(alu_opE), .funct3(funct3E), .funct7(funct7E), .opcode(opcodeE), .alu_ctrl(alu_ctrl));
-    alu u_alu(.src_a(aluA), .src_b(aluB), .alu_ctrl(alu_ctrl), .alu_result(alu_resultE), .zero(), .negative(), .carry(), .overflow());
+    alu u_alu(.src_a(aluA), .src_b(aluB), .alu_ctrl(alu_ctrl), .alu_result(alu_result_raw), .zero(), .negative(), .carry(), .overflow());
+
+    // Link instructions write the address of the following instruction.  Keep
+    // this on the regular ALU-result path so it is forwarded and written back
+    // exactly like any other register result.
+    assign alu_resultE = jumpE ? pcPlus4E : alu_result_raw;
 
     always_comb begin
         branch_taken = 1'b0;

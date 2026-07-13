@@ -75,8 +75,8 @@ module control_unit (
             reg_write = 1'b1;
             jump      = 1'b1;
             alu_src   = 1'b1;
-            result_src = 2'b10;
             alu_op    = 2'b00;
+            result_src = 2'b10;
         end
 
         // LUI

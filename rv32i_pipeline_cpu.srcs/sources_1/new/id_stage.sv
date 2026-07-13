@@ -9,6 +9,16 @@ module id_stage (
     input  logic [31:0]  pcD,
     input  logic [31:0]  pcPlus4D,
 
+    // Forwarding inputs from later pipeline stages
+    input  logic         reg_writeE,
+    input  logic [4:0]   rdE,
+    input  logic [31:0]  alu_resultE,
+
+    input  logic         reg_writeM,
+    input  logic [1:0]   result_srcM,
+    input  logic [4:0]   rdM,
+    input  logic [31:0]  resultM,
+
     // Write Back Interface
     input  logic         reg_writeW,
     input  logic [4:0]   rdW,
@@ -41,6 +51,8 @@ module id_stage (
 );
 
 logic [6:0] opcode;
+logic [31:0] reg_rs1_data;
+logic [31:0] reg_rs2_data;
 
 assign pc_outD     = pcD;
 assign pcPlus4_outD = pcPlus4D;
@@ -77,10 +89,32 @@ register_file u_register_file (
     .rd_write_data(resultW),
     .reg_write_en(reg_writeW),
 
-    .rs1_data(rs1_dataD),
-    .rs2_data(rs2_dataD)
+    .rs1_data(reg_rs1_data),
+    .rs2_data(reg_rs2_data)
 
 );
+
+always_comb begin
+    if (rs1D == 5'd0)
+        rs1_dataD = 32'd0;
+    else if (reg_writeE && (rdE != 5'd0) && (rdE == rs1D))
+        rs1_dataD = alu_resultE;
+    else if (reg_writeM && (result_srcM != 2'b01) && (rdM != 5'd0) && (rdM == rs1D))
+        rs1_dataD = resultM;
+    else
+        rs1_dataD = reg_rs1_data;
+end
+
+always_comb begin
+    if (rs2D == 5'd0)
+        rs2_dataD = 32'd0;
+    else if (reg_writeE && (rdE != 5'd0) && (rdE == rs2D))
+        rs2_dataD = alu_resultE;
+    else if (reg_writeM && (result_srcM != 2'b01) && (rdM != 5'd0) && (rdM == rs2D))
+        rs2_dataD = resultM;
+    else
+        rs2_dataD = reg_rs2_data;
+end
 
 immediate_generator u_immediate_generator (
 

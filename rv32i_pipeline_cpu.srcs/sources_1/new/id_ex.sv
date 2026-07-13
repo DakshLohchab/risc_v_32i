@@ -109,6 +109,22 @@ always_ff @(posedge clk or negedge rst_n) begin
 
         if (flushE) begin
 
+            pcE         <= 32'd0;
+            pcPlus4E    <= 32'd0;
+
+            rs1_dataE   <= 32'd0;
+            rs2_dataE   <= 32'd0;
+
+            immE        <= 32'd0;
+
+            rs1E        <= 5'd0;
+            rs2E        <= 5'd0;
+            rdE         <= 5'd0;
+
+            funct3E     <= 3'd0;
+            funct7E     <= 7'd0;
+            opcodeE     <= 7'd0;
+
             reg_writeE  <= 1'b0;
             mem_writeE  <= 1'b0;
             alu_srcE    <= 1'b0;

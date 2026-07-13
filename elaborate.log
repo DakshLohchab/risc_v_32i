@@ -1,0 +1,35 @@
+Vivado Simulator v2025.2
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: /home/dlohchab/Xilinx/2025.2/Vivado/bin/unwrapped/lnx64.o/xelab -incr --debug typical --relax --mt 8 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_rv32i_pipeline_behav xil_defaultlib.tb_rv32i_pipeline xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.pc
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.instruction_memory
+Compiling module xil_defaultlib.if_id
+Compiling module xil_defaultlib.if_stage
+Compiling module xil_defaultlib.instruction_decoder
+Compiling module xil_defaultlib.register_file
+Compiling module xil_defaultlib.immediate_generator
+Compiling module xil_defaultlib.control_unit
+Compiling module xil_defaultlib.id_stage
+Compiling module xil_defaultlib.id_ex
+Compiling module xil_defaultlib.alu_control
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.ex_stage
+Compiling module xil_defaultlib.ex_mem
+Compiling module xil_defaultlib.data_memory(DEPTH_BYTES=64)
+Compiling module xil_defaultlib.mem_stage(DMEM_DEPTH_BYTES=64)
+Compiling module xil_defaultlib.mem_wb
+Compiling module xil_defaultlib.wb_stage
+Compiling module xil_defaultlib.hazard_unit
+Compiling module xil_defaultlib.rv32i_pipeline(DMEM_DEPTH_BYTES=...
+Compiling module xil_defaultlib.tb_rv32i_pipeline
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_rv32i_pipeline_behav
